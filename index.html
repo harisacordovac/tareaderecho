@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Extranet UNDAC · Trámite ARCO – Derecho al Olvido (Demo)</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .step.active{border-color:#1e3a8a;background:#fff}
+  </style>
+</head>
+<body class="bg-slate-100 text-slate-800">
+  <!-- Barra superior estilo Extranet -->
+  <header class="bg-[#1f4a8b] text-white shadow">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="flex items-center gap-2">
+          <div class="w-9 h-9 rounded bg-white/20 grid place-items-center font-bold">U</div>
+          <div class="leading-tight">
+            <div class="text-sm font-bold tracking-wide">UNDAC 2.0 <span class="font-normal">académico</span></div>
+            <div class="text-xs text-white/80 -mt-0.5">Módulo nuevo · Demo</div>
+          </div>
+        </div>
+      </div>
+      <nav class="hidden md:flex items-center gap-5 text-sm">
+        <a class="hover:underline flex items-center gap-1" href="#"><span>🏠</span>Inicio</a>
+        <a class="hover:underline flex items-center gap-1" href="#"><span>👤</span>Mi Perfil</a>
+        <a class="hover:underline flex items-center gap-1" href="#"><span>💳</span>Pagos en línea</a>
+        <a class="hover:underline flex items-center gap-1" href="#"><span>🖥️</span>Aula Virtual</a>
+        <a class="hover:underline flex items-center gap-1" href="#"><span>⏻</span>Cerrar Sesión</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Cinta secundaria con título del trámite -->
+  <div class="bg-[#2a5fb3] text-white">
+    <div class="max-w-7xl mx-auto px-4 py-2 flex items-center justify-between">
+      <div class="text-sm"><span class="font-semibold">Trámite:</span> Derecho al Olvido (ARCO – Cancelación/Supresión)</div>
+      <div class="text-xs">Mesa de Partes Virtual · SLA: 3 días (1ra respuesta) · 20 días (cierre)</div>
+    </div>
+  </div>
+
+  <!-- Contenido -->
+  <main class="max-w-7xl mx-auto px-4 py-5 grid grid-cols-1 lg:grid-cols-12 gap-5">
+    <!-- Lateral tipo "Mi Perfil" -->
+    <aside class="lg:col-span-3 space-y-3">
+      <div class="bg-white rounded-xl border border-slate-200 p-4">
+        <div class="flex items-center gap-3">
+          <div class="w-14 h-14 rounded-full bg-slate-200 grid place-items-center text-xl">👩🏻‍🎓</div>
+          <div class="text-sm">
+            <div class="font-semibold">CORDOVA CONDOR, Harisa</div>
+            <div class="text-slate-500">Código: 2114403085</div>
+            <div class="text-slate-500">EISC – 2025-B</div>
+          </div>
+        </div>
+        <hr class="my-3">
+        <div class="text-xs space-y-1">
+          <div>DNI 72637914</div>
+          <div>Correo inst.: nombre.apellido@undac.edu.pe</div>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-xl border border-slate-200 p-3">
+        <div class="text-sm font-semibold mb-2">Accesos rápidos</div>
+        <div class="flex flex-col gap-2 text-sm">
+          <a class="px-3 py-2 rounded border border-slate-200 hover:border-blue-600" href="#paso1">➕ Nuevo trámite</a>
+          <a class="px-3 py-2 rounded border border-slate-200 hover:border-blue-600" href="#paso3">🗂️ Mis solicitudes</a>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Área del trámite (wizard) -->
+    <section class="lg:col-span-9">
+      <!-- Indicador de pasos -->
+      <ol class="grid grid-cols-3 gap-3 mb-4">
+        <li class="step active rounded-xl border border-blue-800 p-3 bg-white">
+          <div class="text-xs text-slate-500">Paso 1</div>
+          <div class="font-semibold">Solicitar</div>
+        </li>
+        <li class="step rounded-xl border border-slate-200 p-3 bg-white">
+          <div class="text-xs text-slate-500">Paso 2</div>
+          <div class="font-semibold">Revisar & Asegurar</div>
+        </li>
+        <li class="step rounded-xl border border-slate-200 p-3 bg-white">
+          <div class="text-xs text-slate-500">Paso 3</div>
+          <div class="font-semibold">Transparencia</div>
+        </li>
+      </ol>
+
+      <!-- PASO 1 -->
+      <div id="paso1" class="rounded-2xl bg-white border border-slate-200 overflow-hidden">
+        <div class="px-4 py-3 border-b border-slate-200 flex items-center justify-between">
+          <h2 class="font-semibold">1) Solicitud (Mesa de Partes Virtual)</h2>
+        </div>
+        <div class="p-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+          <label class="block text-sm">Código universitario*<input id="cod" class="mt-1 w-full px-3 py-2 bg-white rounded border border-slate-300" placeholder="2114403085" value="2114403085"></label>
+          <label class="block text-sm">Correo de contacto*<input id="mail" class="mt-1 w-full px-3 py-2 bg-white rounded border border-slate-300" placeholder="tucorreo@dominio.com"></label>
+
+          <fieldset class="md:col-span-2 border border-slate-200 rounded-xl p-3">
+            <legend class="px-1 text-sm">¿Dónde quieres que atendamos tu pedido?*</legend>
+            <p class="text-xs text-slate-500 mb-2">Marca uno o más sistemas y, si conoces, pega la(s) URL(s) exacta(s).</p>
+            <div class="grid md:grid-cols-2 gap-x-6 gap-y-2 text-sm">
+              <label class="flex items-center gap-2"><input type="checkbox" class="chk-alcance" value="Correo"> Correo institucional (baja de cuenta)</label>
+              <label class="flex items-center gap-2"><input type="checkbox" class="chk-alcance" value="Aula Virtual"> Publicaciones en Aula Virtual – anonimización</label>
+              <label class="flex items-center gap-2"><input type="checkbox" class="chk-alcance" value="Intranet/Buscador"> Intranet/Buscador UNDAC – eliminación/desindexación</label>
+              <label class="flex items-center gap-2"><input type="checkbox" class="chk-alcance" value="Repositorio"> Repositorio institucional – versión anonimizada</label>
+              <label class="flex items-center gap-2"><input type="checkbox" class="chk-alcance" value="Redes sociales oficiales"> Redes sociales oficiales UNDAC (Facebook/Instagram) – retiro de publicación</label>
+              <div class="flex items-center gap-2">
+                <input type="checkbox" class="chk-alcance" value="Otro">
+                <span>Otro sistema</span>
+                <input id="otroSistema" class="ml-2 flex-1 px-2 py-1 bg-white rounded border border-slate-300" placeholder="Especifica (p. ej., 'Portal de egresados')" />
+              </div>
+            </div>
+            <div class="mt-3 grid md:grid-cols-2 gap-3">
+              <label class="block text-sm md:col-span-2">URL(s) exacta(s) del contenido
+                <textarea id="urls" rows="2" class="mt-1 w-full px-3 py-2 bg-white rounded border border-slate-300" placeholder="Pega aquí enlaces separados por salto de línea"></textarea>
+              </label>
+              <label class="block text-sm md:col-span-2">Observaciones
+                <textarea id="obs" rows="2" class="mt-1 w-full px-3 py-2 bg-white rounded border border-slate-300" placeholder="Información para ubicar el contenido (curso, fecha, captura, etc.)"></textarea>
+              </label>
+              <p class="text-xs text-slate-500 md:col-span-2">Nota: solo gestionamos contenidos en <b>canales oficiales UNDAC</b>. Si el enlace pertenece a páginas ajenas (grupos/usuarios), emitiremos una <b>carta modelo</b> y guía para que el titular solicite el retiro directamente al administrador de la página o a la plataforma.</p>
+            </div>
+          </fieldset>
+
+          <details class="md:col-span-2 bg-slate-50 rounded-xl p-3 border border-slate-200">
+            <summary class="text-sm font-medium">Datos opcionales (solo si es necesario)</summary>
+            <div class="mt-3 grid md:grid-cols-2 gap-3">
+              <label class="block text-sm">Teléfono<input class="mt-1 w-full px-3 py-2 bg-white rounded border border-slate-300"></label>
+              <label class="block text-sm">Adjuntar sustento<input type="file" class="mt-1 w-full text-sm"></label>
+            </div>
+          </details>
+
+          <fieldset class="md:col-span-2 border border-slate-200 rounded-xl p-3">
+            <legend class="px-1 text-sm">Consentimiento y aviso</legend>
+            <label class="flex items-start gap-2 text-sm"><input id="okPriv" type="checkbox" class="mt-1"> He leído el <a href="#" id="verAviso" class="underline text-blue-700">aviso de privacidad</a>.</label>
+            <label class="flex items-start gap-2 text-sm mt-1"><input id="okNotif" type="checkbox" class="mt-1"> Acepto recibir notificaciones del estado.</label>
+          </fieldset>
+
+          <div class="md:col-span-2 flex gap-3 items-center">
+            <button id="to2" class="px-4 py-2 rounded-lg bg-blue-600 hover:bg-blue-700 text-white">Continuar</button>
+            <span id="msg1" class="text-sm text-slate-500"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- PASO 2 -->
+      <div id="paso2" class="rounded-2xl bg-white border border-slate-200 overflow-hidden hidden">
+        <div class="px-4 py-3 border-b border-slate-200 flex items-center justify-between">
+          <h2 class="font-semibold">2) Revisión rápida y seguridad</h2>
+        </div>
+        <div class="p-4 grid md:grid-cols-2 gap-4">
+          <fieldset class="border border-slate-200 rounded-xl p-3">
+            <legend class="px-1 text-sm">Finalidad del tratamiento</legend>
+            <label class="flex items-center gap-2 text-sm"><input type="checkbox" checked disabled> Atender este trámite ARCO</label>
+            <label class="flex items-center gap-2 text-sm"><input id="finEst" type="checkbox"> Estadísticas internas (datos anonimizados)</label>
+            <label class="flex items-center gap-2 text-sm"><input id="finEgre" type="checkbox"> Bolsa de egresados (consentimiento)</label>
+          </fieldset>
+
+          <fieldset class="border border-slate-200 rounded-xl p-3">
+            <legend class="px-1 text-sm">Política de almacenamiento</legend>
+            <label class="block text-sm">Plazo de supresión
+              <select id="plazo" class="mt-1 w-full px-3 py-2 bg-white rounded border border-slate-300">
+                <option>Baja inmediata</option>
+                <option>30 días</option>
+                <option>12 meses</option>
+              </select>
+            </label>
+            <p class="text-xs text-slate-500 mt-2">Backups: supresión diferida y no reintroducción al restaurar.</p>
+          </fieldset>
+
+          <div class="md:col-span-2 border border-slate-200 rounded-xl p-3">
+            <div class="flex items-center justify-between">
+              <p class="text-sm font-medium">Rectificación previa</p>
+              <button id="guardarRect" class="px-3 py-1.5 rounded-lg bg-slate-200">Guardar cambios</button>
+            </div>
+            <div class="mt-2 grid md:grid-cols-2 gap-3">
+              <label class="block text-sm">Correo institucional<input id="rectCorreo" class="mt-1 w-full px-3 py-2 bg-white rounded border border-slate-300" value="nombre.apellido@undac.edu.pe"></label>
+              <label class="block text-sm">Alias en foros (Aula Virtual)<input id="rectAlias" class="mt-1 w-full px-3 py-2 bg-white rounded border border-slate-300" value="UsuarioUNDAC"></label>
+            </div>
+          </div>
+
+          <fieldset class="border border-slate-200 rounded-xl p-3">
+            <legend class="px-1 text-sm">Seguridad</legend>
+            <label class="flex items-center gap-2 text-sm"><input id="mfa" type="checkbox" class="scale-110"> Activar segundo factor (MFA)</label>
+            <label class="flex items-center gap-2 text-sm"><input checked disabled type="checkbox" class="scale-110"> Cifrado en tránsito y reposo</label>
+          </fieldset>
+
+          <div class="md:col-span-2 flex items-center justify-between">
+            <button id="back1" class="px-4 py-2 rounded-lg bg-slate-200">Volver</button>
+            <button id="to3" class="px-4 py-2 rounded-lg bg-blue-600 hover:bg-blue-700 text-white">Ejecutar</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- PASO 3 -->
+      <div id="paso3" class="rounded-2xl bg-white border border-slate-200 overflow-hidden hidden">
+        <div class="px-4 py-3 border-b border-slate-200 flex items-center justify-between">
+          <h2 class="font-semibold">3) Transparencia: estado del expediente y constancia</h2>
+        </div>
+        <div class="p-4 space-y-4">
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+            <div class="bg-white border border-slate-200 rounded-xl p-3">
+              <p class="text-xs text-slate-500">Solicitudes (mes)</p><p id="kpiTotal" class="text-xl font-bold">0</p>
+            </div>
+            <div class="bg-white border border-slate-200 rounded-xl p-3">
+              <p class="text-xs text-slate-500">% dentro de SLA</p><p id="kpiSLA" class="text-xl font-bold">0%</p>
+            </div>
+            <div class="bg-white border border-slate-200 rounded-xl p-3">
+              <p class="text-xs text-slate-500">Tiempo medio</p><p id="kpiTMR" class="text-xl font-bold">—</p>
+            </div>
+            <div class="bg-white border border-slate-200 rounded-xl p-3">
+              <p class="text-xs text-slate-500">Evidencias OK</p><p id="kpiEvi" class="text-xl font-bold">100%</p>
+            </div>
+          </div>
+
+          <div class="bg-white border border-slate-200 rounded-xl">
+            <div class="p-3 border-b border-slate-200 flex items-center justify-between">
+              <p class="font-medium">Bitácora (resumen)</p>
+              <div class="flex items-center gap-2">
+                <button id="btnCarta" class="px-3 py-2 rounded-lg bg-slate-200">Carta modelo para terceros</button>
+                <button id="btnConstancia" class="px-3 py-2 rounded-lg bg-blue-600 hover:bg-blue-700 text-white">Generar constancia</button>
+              </div>
+            </div>
+            <div class="p-3 overflow-x-auto">
+              <table class="min-w-full text-sm">
+                <thead class="text-slate-500">
+                  <tr><th class="text-left py-2">Expediente</th><th>Fecha</th><th>Sistema</th><th>Acción</th><th>Estado</th></tr>
+                </thead>
+                <tbody id="tbodyBit" class="divide-y divide-slate-200"></tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="flex items-center justify-between">
+            <button id="back2" class="px-4 py-2 rounded-lg bg-slate-200">Volver</button>
+            <a id="nueva" class="px-4 py-2 rounded-lg bg-blue-600 hover:bg-blue-700 text-white" href="#">Nueva solicitud</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Modal aviso -->
+  <div id="modalAviso" class="fixed inset-0 bg-black/60 hidden items-center justify-center p-4">
+    <div class="max-w-xl w-full bg-white border border-slate-200 rounded-2xl overflow-hidden">
+      <div class="px-4 py-3 border-b border-slate-200 flex items-center justify-between">
+        <h3 class="font-semibold">Aviso de privacidad (demo)</h3>
+        <button onclick="toggleAviso(false)" class="text-slate-500">✕</button>
+      </div>
+      <div class="p-4 text-sm space-y-2">
+        <p>UNDAC tratará tus datos solo para atender este trámite. De manera opcional, puedes autorizar su uso para estadísticas anonimizadas o bolsa de egresados.</p>
+        <ul class="list-disc ml-5 text-slate-600">
+          <li>Responsable: Oficial de Datos Personales – Secretaría General.</li>
+          <li>Plazos: 3 días hábiles (primera respuesta) y 20 días hábiles (cierre).</li>
+          <li>Derechos: acceso, rectificación, cancelación/supresión y oposición.</li>
+        </ul>
+      </div>
+      <div class="px-4 py-3 border-t border-slate-200 text-right">
+        <button class="px-3 py-2 rounded bg-slate-200" onclick="toggleAviso(false)">Entendido</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div id="toast" class="fixed bottom-6 right-6 px-4 py-2 rounded-lg bg-blue-600 text-white hidden">Guardado</div>
+
+  <footer class="max-w-7xl mx-auto px-4 py-10 text-xs text-slate-500">
+    Prototipo educativo · Integrado visualmente a Extranet UNDAC · Flujo: Solicitar → Revisar & Asegurar → Transparencia.
+  </footer>
+
+  <script>
+    // Estado simulado y variables
+    let casos=[
+      {exp:'ARCO-2025-000123', fecha:'02/10/2025', sistema:'Aula Virtual', accion:'Anonimizar foros', estado:'Cerrada', dias:9},
+      {exp:'ARCO-2025-000124', fecha:'03/10/2025', sistema:'Correo', accion:'Baja de cuenta', estado:'En ejecución', dias:5},
+      {exp:'ARCO-2025-000125', fecha:'04/10/2025', sistema:'Buscador', accion:'Desindexar', estado:'En evaluación', dias:1},
+    ];
+    let selectedAlcances=[], urlsPegadas='', otroSistemaTexto='', observaciones='';
+
+    // Navegación de pasos
+    const paso1=document.getElementById('paso1');
+    const paso2=document.getElementById('paso2');
+    const paso3=document.getElementById('paso3');
+    const steps=document.querySelectorAll('.step');
+
+    function go(n){
+      [paso1,paso2,paso3].forEach((s,i)=>s.classList.toggle('hidden', i!==n));
+      steps.forEach((c,i)=>c.classList.toggle('active', i===n));
+      window.scrollTo({top:0,behavior:'smooth'});
+    }
+
+    // Validar y pasar a paso 2
+    document.getElementById('to2').addEventListener('click', ()=>{
+      const cod=document.getElementById('cod').value.trim();
+      const mail=document.getElementById('mail').value.trim();
+      const ok=document.getElementById('okPriv').checked;
+      const msg=document.getElementById('msg1');
+      selectedAlcances=[...document.querySelectorAll('.chk-alcance:checked')].map(x=>x.value);
+      urlsPegadas=document.getElementById('urls').value.trim();
+      otroSistemaTexto=document.getElementById('otroSistema').value.trim();
+      observaciones=document.getElementById('obs').value.trim();
+
+      if(!cod || !mail || !ok || selectedAlcances.length===0){
+        msg.textContent='Completa código/correo, marca el aviso y selecciona al menos un alcance.';
+        msg.className='text-sm text-red-600';
+        return;
+      }
+      msg.textContent='Solicitud registrada ✔ Expediente generado.';
+      msg.className='text-sm text-emerald-700';
+      // Agregar expediente a bitácora
+      const sistemas = selectedAlcances.join(', ') + (otroSistemaTexto? ' ('+otroSistemaTexto+')':'');
+      casos.unshift({exp:'ARCO-2025-'+String(100000+Math.floor(Math.random()*900000)), fecha:new Date().toLocaleDateString('es-PE'), sistema:sistemas, accion:'Pendiente', estado:'Recibida', dias:0});
+      renderKPIs(); renderBit();
+      go(1);
+    });
+
+    document.getElementById('back1').addEventListener('click', ()=>go(0));
+    document.getElementById('to3').addEventListener('click', ()=>{ toast('Acciones enviadas a sistemas'); go(2); });
+    document.getElementById('back2').addEventListener('click', ()=>go(1));
+    document.getElementById('nueva').addEventListener('click', (e)=>{ e.preventDefault(); go(0); });
+
+    // Aviso modal
+    const modal=document.getElementById('modalAviso');
+    document.getElementById('verAviso').addEventListener('click', (e)=>{ e.preventDefault(); toggleAviso(true); });
+    function toggleAviso(show){ modal.classList.toggle('hidden', !show); modal.classList.toggle('flex', show); }
+
+    // Rectificación
+    document.getElementById('guardarRect').addEventListener('click', ()=>toast('Datos rectificados'));
+
+    // KPIs y Bitácora
+    const kpiTotal=document.getElementById('kpiTotal');
+    const kpiSLA=document.getElementById('kpiSLA');
+    const kpiTMR=document.getElementById('kpiTMR');
+    const tbodyBit=document.getElementById('tbodyBit');
+
+    function renderKPIs(){
+      kpiTotal.textContent=casos.length;
+      const ok=casos.filter(c=>c.dias<=20).length;
+      kpiSLA.textContent=Math.round((ok/casos.length)*100)+'%';
+      const prom=Math.round((casos.reduce((a,c)=>a+c.dias,0)/casos.length)*10)/10;
+      kpiTMR.textContent=prom+' días';
+    }
+    function renderBit(){
+      tbodyBit.innerHTML=casos.slice(0,8).map(c=>`<tr>
+        <td class="py-2">${c.exp}</td><td>${c.fecha}</td><td>${c.sistema}</td><td>${c.accion}</td>
+        <td><span class="px-2 py-1 rounded ${c.estado==='Cerrada'?'bg-green-100 text-green-700':c.estado==='En ejecución'?'bg-amber-100 text-amber-700':'bg-sky-100 text-sky-700'}">${c.estado}</span></td>
+      </tr>`).join('');
+    }
+    renderKPIs(); renderBit();
+
+    // Constancia
+    document.getElementById('btnConstancia').addEventListener('click', ()=>{
+      const c=casos.find(x=>x.estado==='Cerrada')||casos[0];
+      const texto=`CONSTANCIA DE EJECUCIÓN
+Expediente: ${c.exp}
+Sistemas: ${c.sistema}
+Acción: ${c.accion}
+Fecha: ${new Date().toLocaleString('es-PE')}
+---
+UNDAC certifica la ejecución realizada y su registro en bitácora.`;
+      const blob=new Blob([texto],{type:'text/plain'});
+      const url=URL.createObjectURL(blob);
+      const a=document.createElement('a'); a.href=url; a.download=`constancia_${c.exp}.txt`; a.click(); URL.revokeObjectURL(url);
+    });
+
+    // Carta modelo para terceros (páginas NO oficiales)
+    document.getElementById('btnCarta').addEventListener('click', ()=>{
+      const urls = urlsPegadas ? urlsPegadas.split(/\\n|,\\s*/).filter(Boolean) : [];
+      const lista = urls.length? urls.map((u,i)=>`  ${i+1}. ${u}`).join('\\n') : '  (sin URL específica)';
+      const texto=`CARTA MODELO – SOLICITUD DE RETIRO/ELIMINACIÓN DE CONTENIDO
+Señor(a) Administrador(a):
+Por la presente, yo, titular de los datos personales, solicito el retiro/ocultamiento del contenido que incluye mi imagen/nombre en la(s) siguiente(s) URL(s):
+${lista}
+
+Fundamento mi pedido en la Ley de Protección de Datos Personales (Ley Nº 29733) y normativa aplicable. Agradezco confirmar el retiro en un plazo razonable. De no ser procedente, agradeceré informar los motivos.
+
+Atentamente,
+[Nombre y código]
+[Correo de contacto]
+[Fecha]`;
+      const blob=new Blob([texto],{type:'text/plain'});
+      const url=URL.createObjectURL(blob);
+      const a=document.createElement('a'); a.href=url; a.download=`carta_modelo_terceros.txt`; a.click(); URL.revokeObjectURL(url);
+    });
+
+    // Toast
+    const toastEl=document.getElementById('toast');
+    function toast(t){ toastEl.textContent=t; toastEl.classList.remove('hidden'); setTimeout(()=>toastEl.classList.add('hidden'),1500); }
+  </script>
+</body>
+</html>
